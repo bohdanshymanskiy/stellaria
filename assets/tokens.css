@@ -1,0 +1,128 @@
+/* ============================================================
+   DEEP SPACE PHARMA — STELLARIA™  ·  Design Tokens
+   Web-safe system fonts only. WCAG-AA contrast checked.
+   ============================================================ */
+
+:root {
+  /* ---------- COLOR ----------
+     Contrast (on Obsidian 900 #05070C):
+       Ice-050 #F5F7FB   → 18.4 : 1  (AAA)
+       Ice-200 #D6DCEB   → 14.5 : 1  (AAA)
+       Ice-400 #98A3BA   →  7.5 : 1  (AAA)
+       Plasma-500 #6FE4F3→ 11.9 : 1  (AAA)
+       Signal-warn #FFC75A → 12.8 : 1 (AAA)
+  */
+  --ds-obsidian-900: #05070C;   /* primary bg */
+  --ds-obsidian-800: #0B1426;   /* surface */
+  --ds-obsidian-700: #152341;   /* raised surface */
+  --ds-obsidian-600: #233359;   /* hairline (stronger so it's actually visible) */
+
+  --ds-ice-050: #F5F7FB;        /* primary type on dark */
+  --ds-ice-100: #EAEFF8;        /* body type on dark */
+  --ds-ice-200: #D6DCEB;        /* strong secondary */
+  --ds-ice-400: #98A3BA;        /* meta — readable (7.5:1) */
+
+  --ds-plasma-500: #6FE4F3;     /* signature accent — brighter for contrast */
+  --ds-plasma-600: #3FC6D8;
+  --ds-plasma-300: #B5F1F8;
+  --ds-plasma-glow: rgba(111, 228, 243, 0.35);
+
+  --ds-signal-warn: #FFC75A;    /* boxed warning rule */
+
+  --ds-paper-050: #FBFCFE;
+  --ds-paper-100: #EEF1F7;
+
+  /* ---------- TYPOGRAPHY — system / web-safe only ---------- */
+  --ds-font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ds-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ds-font-mono:    ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+
+  /* Type scale */
+  --ds-text-2xs: 10px;
+  --ds-text-xs:  11px;
+  --ds-text-sm:  13px;
+  --ds-text-base:15px;
+  --ds-text-md:  17px;
+  --ds-text-lg:  21px;
+  --ds-text-xl:  28px;
+  --ds-text-2xl: 36px;
+  --ds-text-3xl: 48px;
+
+  --ds-track-tight: -0.02em;
+  --ds-track-loose: 0.14em;
+
+  /* ---------- RADII ---------- */
+  --ds-r-1: 2px;
+  --ds-r-2: 4px;
+  --ds-r-pill: 999px;
+
+  /* ---------- MOTION ----------
+     UI micro-interactions only (hovers, focus transitions).
+     Banner animation timing is intentionally NOT specified — pick what
+     reads well and feels on-brand for the format.
+  */
+  --ds-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-dur-fast: 180ms;
+  --ds-dur-base: 320ms;
+}
+
+.ds-eyebrow {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-2xs);
+  letter-spacing: var(--ds-track-loose);
+  text-transform: uppercase;
+  color: var(--ds-ice-200);
+}
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  background: var(--ds-plasma-500);
+  color: var(--ds-obsidian-900);
+  font-family: var(--ds-font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--ds-r-1);
+  cursor: pointer;
+  transition: background var(--ds-dur-fast) var(--ds-ease-out);
+}
+.ds-btn:hover { background: var(--ds-plasma-300); }
+
+.ds-starfield {
+  background-color: var(--ds-obsidian-900);
+  background-image:
+    /* Tier 1 — tiny bright stars */
+    radial-gradient(0.8px 0.8px at 6% 12%, rgba(234,239,248,0.90) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 14% 47%, rgba(234,239,248,0.75) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 22% 78%, rgba(234,239,248,0.80) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 31% 23%, rgba(234,239,248,0.65) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 38% 62%, rgba(234,239,248,0.85) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 47% 9%, rgba(234,239,248,0.70) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 54% 41%, rgba(234,239,248,0.90) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 63% 71%, rgba(234,239,248,0.75) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 71% 18%, rgba(234,239,248,0.80) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 79% 53%, rgba(234,239,248,0.70) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 87% 84%, rgba(234,239,248,0.85) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 94% 31%, rgba(234,239,248,0.65) 50%, transparent 51%),
+    /* Tier 2 — dim stars */
+    radial-gradient(0.6px 0.6px at 11% 33%, rgba(234,239,248,0.35) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 26% 55%, rgba(234,239,248,0.30) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 43% 88%, rgba(234,239,248,0.40) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 57% 17%, rgba(234,239,248,0.25) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 68% 44%, rgba(234,239,248,0.35) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 81% 27%, rgba(234,239,248,0.30) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 91% 61%, rgba(234,239,248,0.40) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 4% 69%, rgba(234,239,248,0.25) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 19% 8%, rgba(234,239,248,0.35) 50%, transparent 51%),
+    radial-gradient(0.6px 0.6px at 36% 39%, rgba(234,239,248,0.30) 50%, transparent 51%),
+    /* Tier 3 — tinted accent stars */
+    radial-gradient(1px 1px at 49% 72%, rgba(181,241,248,0.55) 50%, transparent 51%),
+    radial-gradient(1px 1px at 73% 8%, rgba(187,161,255,0.45) 50%, transparent 51%),
+    radial-gradient(1px 1px at 16% 91%, rgba(181,241,248,0.40) 50%, transparent 51%);
+}
